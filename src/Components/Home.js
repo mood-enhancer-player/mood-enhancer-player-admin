@@ -1,11 +1,11 @@
 import React from "react";
 import { Grid, Typography, makeStyles, Paper } from "@material-ui/core";
 import MusicCard from "./MusicCard";
-import hasi from "../music/hasi.mp3";
-import kabir from "../music/kabir.mp3";
-import nayanne from "../music/nayanne.mp3";
-import sanamre from "../music/sanamre.mp3";
-import hasiImag from "../images/1.png";
+// import hasi from "../music/hasi.mp3";
+// import kabir from "../music/kabir.mp3";
+// import nayanne from "../music/nayanne.mp3";
+// import sanamre from "../music/sanamre.mp3";
+// import hasiImag from "../images/1.png";
 
 const useStyles = makeStyles({
   root: {
@@ -29,10 +29,10 @@ const useStyles = makeStyles({
     height: "80px",
     margin: "20px",
     textAlign: "center",
-    paddingTop:"25px",
-    fontSize:"20px"
+    paddingTop: "25px",
+    fontSize: "20px",
     // paddingBottom:"auto"
-  }
+  },
 });
 // Static Data
 // const audioLists = [
@@ -130,14 +130,13 @@ function Home() {
       <div>
         <div className={classes.root}>
           <Grid container spacing={2}>
-            {
-            ["Total Users", "Total Songs", "Total Artists"].map((text) => {
-              return (<Paper className={classes.paper}>
-                {text}
-              </Paper>)
-            })
-          }
-            
+            {["Total Users", "Total Songs", "Total Artists"].map((text) => {
+              return (
+                <Paper className={classes.paper} key={text}>
+                  {text}
+                </Paper>
+              );
+            })}
           </Grid>
         </div>
       </div>
