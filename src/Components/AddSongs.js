@@ -10,7 +10,7 @@ import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  labelname: {
+  labelName: {
     width: "250px",
     margin: "auto",
     [theme.breakpoints.down("md")]: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     margin: "auto",
   },
-  div_input: {
+  divInput: {
     display: "flex",
     margin: "15px",
     [theme.breakpoints.down("md")]: {
@@ -31,16 +31,16 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: "15px",
     width: "500px",
-    height: "450px",
+    height: "530px",
     marginRight: "auto",
     marginLeft: "auto",
     [theme.breakpoints.down("md")]: {
       // display: "column"
       width: "300px",
-      height: "600px",
+      height: "640px",
     },
   },
-  textfeild: {
+  textField: {
     width: "400px",
     height: "50px",
     [theme.breakpoints.down("md")]: {
@@ -129,10 +129,10 @@ const AddSongs = () => {
         <Paper className={classes.paper}>
           <h1 style={{ textAlign: "center" }}>Add New Song</h1>
           <form>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Image of Song:</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Image of Song:</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
@@ -142,10 +142,10 @@ const AddSongs = () => {
                 onChange={coverFileHandler}
               />
             </div>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Title:</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Title:</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
@@ -155,10 +155,10 @@ const AddSongs = () => {
                 size="small"
               />
             </div>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Description:</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Description:</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
@@ -170,10 +170,10 @@ const AddSongs = () => {
                 size="small"
               />
             </div>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Artist:</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Artist:</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
@@ -185,10 +185,10 @@ const AddSongs = () => {
                 size="small"
               />
             </div>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Album/Movie</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Album/Movie</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
@@ -198,15 +198,15 @@ const AddSongs = () => {
                 size="small"
               />
             </div>
-            <div className={classes.div_input}>
-              <label className={classes.labelname}>Song file:</label>
+            <div className={classes.divInput}>
+              <label className={classes.labelName}>Song file:</label>
               <TextField
-                className={classes.textfeild}
+                className={classes.textField}
                 id="outlined-flexible"
                 variant="outlined"
                 color="secondary"
                 type="file"
-                name="username"
+                name="songFile"
                 size="small"
                 onChange={songFileHandler}
               />
