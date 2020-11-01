@@ -70,7 +70,7 @@ const AddSongs = () => {
     });
   };
   const history = useHistory();
-  const [UploadSongData, { loading }] = useMutation(UPLOAD_SONG_DATA_MUTATION, {
+  const [UploadSongData, { loading }] = useMutation(UploadSongData_MUTATION, {
     update(_, result) {
       if (result) {
         history.push("/");
@@ -228,7 +228,7 @@ const AddSongs = () => {
   );
 };
 
-const UPLOAD_SONG_DATA_MUTATION = gql`
+const UploadSongData_MUTATION = gql`
   mutation uploadSong(
     $songFile: Upload!
     $coverFile: Upload!
