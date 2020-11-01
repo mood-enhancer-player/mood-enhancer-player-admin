@@ -163,7 +163,6 @@ const AddSongs = () => {
                 variant="outlined"
                 color="secondary"
                 type="text"
-                variant="outlined"
                 // label="Alnbum"
                 name="description"
                 onChange={onChange}
@@ -178,7 +177,6 @@ const AddSongs = () => {
                 variant="outlined"
                 color="secondary"
                 type="text"
-                variant="outlined"
                 // label="Alnbum"
                 name="singer"
                 onChange={onChange}

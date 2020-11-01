@@ -24,7 +24,7 @@ import {
   AlarmOutlined as AlarmIcon,
   AccountCircleOutlined as AccountCircle,
   FavoriteBorderOutlined as FavoriteBorderIcon,
-  CameraAltOutlined as CameraAltOutlinedIcon,
+  FormatListBulletedOutlined as FormatListBulletedOutlinedIcon,
 } from "@material-ui/icons";
 
 import { makeStyles, useTheme, fade } from "@material-ui/core/styles";
@@ -32,7 +32,7 @@ import { Link, withRouter } from "react-router-dom";
 import Home from "./Home";
 import AddSongs from "./AddSongs";
 import Profile from "./Profile";
-import SongList from "./SongList";
+import UserList from "./UserList";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -233,11 +233,11 @@ function Dashboard(props) {
       },
     },
     {
-      text: "Song List",
-      icon: <InfoIcon />,
+      text: "User List",
+      icon: <FormatListBulletedOutlinedIcon />,
       onClick: () => {
-        setState("SongList");
-        history.push("/SongList");
+        setState("UserList");
+        history.push("/UserList");
       },
     },
   ];
@@ -300,8 +300,7 @@ function Dashboard(props) {
               inputProps={{ "aria-label": "search" }}
             />
           </div>
-          
-          
+
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton
@@ -353,7 +352,7 @@ function Dashboard(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {state === "Home" ? <Home /> : null}
-        {state === "SongList" ? <SongList /> : null}
+        {state === "UserList" ? <UserList /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
       </main>
     </div>
