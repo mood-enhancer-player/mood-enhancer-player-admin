@@ -7,6 +7,8 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import PlaylistTab from './PlaylistTab';
+import ArtistTab from './ArtistTab';
+import AlbumTab from './AlbumTab';
 
 
 
@@ -88,10 +90,10 @@ const YourLib = () => {
                 <PlaylistTab />
         </TabPanel>
             <TabPanel value={value} index={1} className={classes.tabview}>
-                Artists
+                <ArtistTab />
         </TabPanel>
             <TabPanel value={value} index={2} className={classes.tabview}>
-                Albums
+                <AlbumTab />
         </TabPanel>
         </div>
     )

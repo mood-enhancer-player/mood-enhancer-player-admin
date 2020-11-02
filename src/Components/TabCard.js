@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
     width: "185px",
     height: "230px",
     borderRadius: "10px",
-    background: "linear-gradient(to right, red , yellow)",
+    // backgroundColor:"#A8CABA",
+    backgroundColor:"#414345",
+    // background: "linear-gradient(to right,#000000, #2c3e50)",
     boxShadow: "-11px 11px 31px #191919, 11px -11px 31px #292929",
     "&:hover": {
       background: "black",
