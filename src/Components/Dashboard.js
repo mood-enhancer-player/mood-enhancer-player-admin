@@ -35,10 +35,11 @@ import { Link, withRouter } from "react-router-dom";
 import Home from "./Home";
 import AddSongs from "./AddSongs";
 import Profile from "./Profile";
-import SongList from "./SongList";
+// import SongList from "./SongList";
 import UserList from "./UserList";
 import AddArtist from "./AddArtist";
 import YourLib from "./YourLib";
+import SongList from "./SongList";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -255,11 +256,11 @@ function Dashboard(props) {
       },
     },
     {
-      text: "UserLists",
+      text: "SongLists",
       icon: <ListIcon />,
       onClick: () => {
-        setState("UserLists");
-        history.push("/UserList");
+        setState("SongLists");
+        history.push("/SongList");
       },
     },
     {
@@ -374,7 +375,7 @@ function Dashboard(props) {
         {state === "Home" ? <Home /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
-        {state === "UserLists" ? <UserList /> : null}
+        {state === "SongLists" ? <SongList /> : null}
         {state === "YourLib" ? <YourLib /> : null}
       </main>
     </div>
