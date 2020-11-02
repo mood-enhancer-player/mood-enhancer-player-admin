@@ -16,7 +16,10 @@ import {
   MenuItem,
   Menu,
 } from "@material-ui/core";
+import PersonIcon from '@material-ui/icons/Person';
+import ListIcon from '@material-ui/icons/List';
 import {
+  
   HomeOutlined as HomeIcon,
   SearchOutlined as SearchIcon,
   InfoOutlined as InfoIcon,
@@ -32,7 +35,11 @@ import { Link, withRouter } from "react-router-dom";
 import Home from "./Home";
 import AddSongs from "./AddSongs";
 import Profile from "./Profile";
+// import SongList from "./SongList";
 import UserList from "./UserList";
+import AddArtist from "./AddArtist";
+import YourLib from "./YourLib";
+import SongList from "./SongList";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -240,6 +247,30 @@ function Dashboard(props) {
         history.push("/UserList");
       },
     },
+    {
+      text: "Artists",
+      icon: <PersonIcon />,
+      onClick: () => {
+        setState("Artists");
+        history.push("/Artists");
+      },
+    },
+    {
+      text: "SongLists",
+      icon: <ListIcon />,
+      onClick: () => {
+        setState("SongLists");
+        history.push("/SongList");
+      },
+    },
+    {
+      text: "YourLib",
+      icon: <PersonIcon />,
+      onClick: () => {
+        setState("YourLib");
+        history.push("/YourLib");
+      },
+    },
   ];
 
   const drawer = (
@@ -257,17 +288,7 @@ function Dashboard(props) {
           );
         })}
       </List>
-      <Divider />
-      <List>
-        {["Artists", "Users"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <AlarmIcon /> : <FavoriteBorderIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      
     </div>
   );
 
@@ -354,6 +375,8 @@ function Dashboard(props) {
         {state === "Home" ? <Home /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
+        {state === "SongLists" ? <SongList /> : null}
+        {state === "YourLib" ? <YourLib /> : null}
       </main>
     </div>
   );
