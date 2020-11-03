@@ -16,10 +16,9 @@ import {
   MenuItem,
   Menu,
 } from "@material-ui/core";
-import PersonIcon from '@material-ui/icons/Person';
-import ListIcon from '@material-ui/icons/List';
+import PersonIcon from "@material-ui/icons/Person";
+import ListIcon from "@material-ui/icons/List";
 import {
-  
   HomeOutlined as HomeIcon,
   SearchOutlined as SearchIcon,
   InfoOutlined as InfoIcon,
@@ -28,6 +27,7 @@ import {
   AccountCircleOutlined as AccountCircle,
   FavoriteBorderOutlined as FavoriteBorderIcon,
   FormatListBulletedOutlined as FormatListBulletedOutlinedIcon,
+  QueueMusicOutlined as QueueMusicOutlinedIcon,
 } from "@material-ui/icons";
 
 import { makeStyles, useTheme, fade } from "@material-ui/core/styles";
@@ -257,7 +257,7 @@ function Dashboard(props) {
     },
     {
       text: "SongLists",
-      icon: <ListIcon />,
+      icon: <QueueMusicOutlinedIcon />,
       onClick: () => {
         setState("SongLists");
         history.push("/SongList");
@@ -288,7 +288,6 @@ function Dashboard(props) {
           );
         })}
       </List>
-      
     </div>
   );
 

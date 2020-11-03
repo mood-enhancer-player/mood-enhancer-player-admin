@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Chart from "chart.js";
 
 const Analysis = ({ playCount, songName }) => {
-  console.log(playCount, songName);
   useEffect(() => {
     const ctx = document.getElementById("myChart");
     new Chart(ctx, {
@@ -33,7 +32,7 @@ const Analysis = ({ playCount, songName }) => {
     });
   });
   return (
-    <div className="App">
+    <div>
       <canvas id="myChart" width="600" height="250" />
     </div>
   );
