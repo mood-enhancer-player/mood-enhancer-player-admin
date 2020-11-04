@@ -28,6 +28,7 @@ import {
   FavoriteBorderOutlined as FavoriteBorderIcon,
   FormatListBulletedOutlined as FormatListBulletedOutlinedIcon,
   QueueMusicOutlined as QueueMusicOutlinedIcon,
+  ListOutlined as ListOutlinedIcon,
 } from "@material-ui/icons";
 
 import { makeStyles, useTheme, fade } from "@material-ui/core/styles";
@@ -239,7 +240,7 @@ function Dashboard(props) {
     },
     {
       text: "User List",
-      icon: <FormatListBulletedOutlinedIcon />,
+      icon: <ListOutlinedIcon />,
       onClick: () => {
         setState("UserList");
         history.push("/UserList");
@@ -255,7 +256,7 @@ function Dashboard(props) {
     },
     {
       text: "Song List",
-      icon: <ListIcon />,
+      icon: <QueueMusicOutlinedIcon />,
       onClick: () => {
         setState("SongList");
         history.push("/SongList");
