@@ -66,7 +66,9 @@ const AddSongs = () => {
   const onChange = (e) => {
     setValues({
       ...values,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
+        .trim() // Conver all the field into capitalize and removing white space
+        .replace(/\b\w/g, (c) => c.toUpperCase()),
     });
   };
   const history = useHistory();

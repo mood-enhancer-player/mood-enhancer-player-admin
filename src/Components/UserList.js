@@ -181,8 +181,8 @@ const UserList = () => {
           </TableContainer>
           <TablePagination
             component="div"
-            rowsPerPageOptions={[5, 10, 15, 20]}
-            count={users.length}
+            rowsPerPageOptions={[5, 10, 15, 20, 25, 30]}
+            count={data.getAllUsers.length}
             rowsPerPage={rowsPerPage}
             page={page}
             onChangePage={onChangePage}

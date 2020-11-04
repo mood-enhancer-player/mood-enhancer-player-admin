@@ -16,10 +16,9 @@ import {
   MenuItem,
   Menu,
 } from "@material-ui/core";
-import PersonIcon from '@material-ui/icons/Person';
-import ListIcon from '@material-ui/icons/List';
+import PersonIcon from "@material-ui/icons/Person";
+import ListIcon from "@material-ui/icons/List";
 import {
-  
   HomeOutlined as HomeIcon,
   SearchOutlined as SearchIcon,
   InfoOutlined as InfoIcon,
@@ -28,6 +27,7 @@ import {
   AccountCircleOutlined as AccountCircle,
   FavoriteBorderOutlined as FavoriteBorderIcon,
   FormatListBulletedOutlined as FormatListBulletedOutlinedIcon,
+  QueueMusicOutlined as QueueMusicOutlinedIcon,
 } from "@material-ui/icons";
 
 import { makeStyles, useTheme, fade } from "@material-ui/core/styles";
@@ -35,7 +35,6 @@ import { Link, withRouter } from "react-router-dom";
 import Home from "./Home";
 import AddSongs from "./AddSongs";
 import Profile from "./Profile";
-// import SongList from "./SongList";
 import UserList from "./UserList";
 import AddArtist from "./AddArtist";
 import SongList from "./SongList";
@@ -279,7 +278,6 @@ function Dashboard(props) {
           );
         })}
       </List>
-      
     </div>
   );
 
