@@ -35,7 +35,6 @@ import { Link, withRouter } from "react-router-dom";
 import Home from "./Home";
 import AddSongs from "./AddSongs";
 import Profile from "./Profile";
-// import SongList from "./SongList";
 import UserList from "./UserList";
 import AddArtist from "./AddArtist";
 import YourLib from "./YourLib";
@@ -248,11 +247,11 @@ function Dashboard(props) {
       },
     },
     {
-      text: "Artists",
+      text: "Add Artist",
       icon: <PersonIcon />,
       onClick: () => {
-        setState("Artists");
-        history.push("/Artists");
+        setState("AddArtist");
+        history.push("/AddArtist");
       },
     },
     {
@@ -374,6 +373,7 @@ function Dashboard(props) {
         {state === "Home" ? <Home /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
+        {state === "AddArtist" ? <AddArtist /> : null}
         {state === "SongLists" ? <SongList /> : null}
         {state === "YourLib" ? <YourLib /> : null}
       </main>
