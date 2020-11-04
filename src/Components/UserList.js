@@ -12,10 +12,17 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 import { useQuery, gql } from "@apollo/client";
+import Loader from "./Loader";
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
+  },
+  loader: {
+    backgroundColor:"white",
+    marginTop:"250px",
+    marginLeft:"auto",
+    marginRight:"auto"
   },
   container: {
     maxHeight: 800,
@@ -130,7 +137,10 @@ const UserList = () => {
   return (
     <>
       {loading || !data ? (
-        <CircularProgress />
+        // <center>
+        // <CircularProgress className={classes.loader} />
+        // </center>
+        <Loader />
       ) : (
         <Paper className={classes.root}>
           <TableContainer className={classes.container}>

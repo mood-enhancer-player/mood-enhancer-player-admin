@@ -38,7 +38,6 @@ import Profile from "./Profile";
 // import SongList from "./SongList";
 import UserList from "./UserList";
 import AddArtist from "./AddArtist";
-import YourLib from "./YourLib";
 import SongList from "./SongList";
 
 const drawerWidth = 240;
@@ -248,11 +247,11 @@ function Dashboard(props) {
       },
     },
     {
-      text: "Artists",
+      text: "AddArtist",
       icon: <PersonIcon />,
       onClick: () => {
-        setState("Artists");
-        history.push("/Artists");
+        setState("AddArtist");
+        history.push("/AddArtist");
       },
     },
     {
@@ -261,14 +260,6 @@ function Dashboard(props) {
       onClick: () => {
         setState("SongLists");
         history.push("/SongList");
-      },
-    },
-    {
-      text: "YourLib",
-      icon: <PersonIcon />,
-      onClick: () => {
-        setState("YourLib");
-        history.push("/YourLib");
       },
     },
   ];
@@ -373,10 +364,10 @@ function Dashboard(props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         {state === "Home" ? <Home /> : null}
-        {state === "UserList" ? <UserList /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
+        {state === "UserList" ? <UserList /> : null}
+        {state === "AddArtist" ? <AddArtist /> : null}
         {state === "SongLists" ? <SongList /> : null}
-        {state === "YourLib" ? <YourLib /> : null}
       </main>
     </div>
   );
