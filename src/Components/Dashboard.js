@@ -255,10 +255,10 @@ function Dashboard(props) {
       },
     },
     {
-      text: "SongLists",
+      text: "Song List",
       icon: <ListIcon />,
       onClick: () => {
-        setState("SongLists");
+        setState("SongList");
         history.push("/SongList");
       },
     },
@@ -367,7 +367,7 @@ function Dashboard(props) {
         {state === "AddSongs" ? <AddSongs /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddArtist" ? <AddArtist /> : null}
-        {state === "SongLists" ? <SongList /> : null}
+        {state === "SongList" ? <SongList /> : null}
       </main>
     </div>
   );
