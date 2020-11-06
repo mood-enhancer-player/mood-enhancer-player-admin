@@ -7,7 +7,8 @@ const App = () => {
   return (
     <>
       <Router>
-        <Dashboard />
+        {/* <Dashboard /> */}
+        <Route exact path="/" component={Dashboard} />
       </Router>
     </>
   );

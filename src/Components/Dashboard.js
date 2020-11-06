@@ -227,7 +227,7 @@ function Dashboard(props) {
       icon: <HomeIcon />,
       onClick: () => {
         setState("Home");
-        history.push("/home");
+        // history.push("/home");
       },
     },
     {
@@ -235,7 +235,7 @@ function Dashboard(props) {
       icon: <SearchIcon />,
       onClick: () => {
         setState("AddSongs");
-        history.push("/AddSongs");
+        // history.push("/AddSongs");
       },
     },
     {
@@ -243,7 +243,7 @@ function Dashboard(props) {
       icon: <ListOutlinedIcon />,
       onClick: () => {
         setState("UserList");
-        history.push("/UserList");
+        // history.push("/UserList");
       },
     },
     {
@@ -251,7 +251,7 @@ function Dashboard(props) {
       icon: <PersonIcon />,
       onClick: () => {
         setState("AddArtist");
-        history.push("/AddArtist");
+        // history.push("/AddArtist");
       },
     },
     {
@@ -259,7 +259,7 @@ function Dashboard(props) {
       icon: <QueueMusicOutlinedIcon />,
       onClick: () => {
         setState("SongList");
-        history.push("/SongList");
+        // history.push("/SongList");
       },
     },
   ];
