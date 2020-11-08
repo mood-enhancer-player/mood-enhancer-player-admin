@@ -246,14 +246,14 @@ function Dashboard(props) {
   // );
 
   // State For Menu Switching
-  const [state, setState] = React.useState("Home");
+  const [state, setState] = React.useState("Dashboard");
 
   const itemList = [
     {
       text: "Dashboard",
       icon: <HomeIcon />,
       onClick: () => {
-        setState("Home");
+        setState("DashBoard");
         // history.push("/home");
       },
     },
@@ -325,7 +325,7 @@ function Dashboard(props) {
           >
             <MenuIcon />
           </IconButton>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -337,6 +337,9 @@ function Dashboard(props) {
               }}
               inputProps={{ "aria-label": "search" }}
             />
+          </div> */}
+          <div>
+            <h1>{state}</h1>
           </div>
 
           <div className={classes.grow} />
@@ -390,7 +393,7 @@ function Dashboard(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {state === "Home" ? <Home /> : null}
+        {state === "DashBoard" ? <Home /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddArtist" ? <AddArtist /> : null}

@@ -121,7 +121,7 @@ const UserList = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const [tableIndex, setTableIndex] = useState(0);
 
-  const columTitleRow = ["Id", "Username", "E-mail", "createAt"];
+  const columTitleRow = ["Id", "Username", "E-mail", "CreateAt"];
 
   const { loading, data, error } = useQuery(USERLIST_QUERY);
 
