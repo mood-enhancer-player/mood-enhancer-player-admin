@@ -102,6 +102,37 @@ img {
   }
 } */
 
+.gradient-border {
+  position: absolute;
+  display: block;
+  top: -50%;
+  left: -50%;
+  z-index: -9;
+  display: block;
+  height: 200%;
+  width: 200%;
+  transform: rotate(-45deg);
+  overflow: hidden;
+  background: linear-gradient(
+    to right,
+    #fff 20%,
+    #fff 40%,
+    #ecd08c 50%,
+    #ecd08c 55%,
+    #fff 70%,
+    #fff 100%
+  );
+  background-size: 200% auto;
+
+  animation: shine 3s linear infinite;
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
 .main_div {
   width: 100vw;
   height: 100vh;

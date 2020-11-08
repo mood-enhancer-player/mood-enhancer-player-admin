@@ -19,10 +19,10 @@ const useStyles = makeStyles({
     width: "100%",
   },
   loader: {
-    backgroundColor:"white",
-    marginTop:"250px",
-    marginLeft:"auto",
-    marginRight:"auto"
+    backgroundColor: "white",
+    marginTop: "250px",
+    marginLeft: "auto",
+    marginRight: "auto",
   },
   container: {
     maxHeight: 800,

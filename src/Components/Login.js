@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { makeStyles, TextField, Button } from "@material-ui/core";
 import { gql, useMutation } from "@apollo/client";
-import Alert from "@material-ui/lab/Alert";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 
@@ -19,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "#f0db72",
     textAlign: "center",
-    margin: "20px",
+    marginTop: "90px",
     fontFamily: "fangsong",
   },
   textField: {
@@ -28,49 +27,38 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUp = () => {
+const Login = () => {
   document.getElementsByTagName("html")[0].style.background = "black";
   const context = useContext(AuthContext);
 
   const classes = useStyles();
   const [error, setError] = useState(false);
-  const [userHelperText, setUserHelperText] = useState("");
   const [emailHelperText, setEmailHelperText] = useState("");
   const [passwordHelperText, setPasswordHelperText] = useState("");
-  const [confirmPasswordHelperText, setConfirmPasswordHelperText] = useState(
-    ""
-  );
-  const [errors, setErrors] = useState({});
   const [values, setValues] = useState({
-    username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
   console.log(error);
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
     // onInput change all the erro messages are remove.
     setError(false);
-    setUserHelperText("");
     setEmailHelperText("");
     setPasswordHelperText("");
-    setConfirmPasswordHelperText("");
-    setErrors("");
   };
 
   const history = useHistory();
-  const [signUpUser, { loading }] = useMutation(REGISTER_MUTATION, {
+  const [loginUser, { loading }] = useMutation(LOGIN_MUTATION, {
     update(_, result) {
       if (result) {
-        console.log(result);
+        context.login(result.data.login);
         history.push("/");
-        context.login(result.data.register);
       }
       console.log(loading);
     },
     onError(err) {
-      setErrors(err.graphQLErrors[0].extensions.exception.errors);
+      //   setErrors(err.graphQLErrors[0].extensions.exception.errors);
     },
     // variables:{
     //   username:values.username,
@@ -81,14 +69,6 @@ const SignUp = () => {
   });
 
   const formValidation = () => {
-    // Username validation
-    if (values.username === "" || values.username === null) {
-      console.log(values.username);
-      setError(true);
-      setUserHelperText("Username must not be empty");
-    } else {
-      setError(false);
-    }
     // Email validation
     let reg = /^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/;
 
@@ -113,69 +93,30 @@ const SignUp = () => {
     } else {
       setError(false);
     }
-
-    // ConfirmPassword validation
-    if (values.confirmPassword === "" || values.password === null) {
-      setError(true);
-      setConfirmPasswordHelperText("Confirm Password must not be empty");
-    } else if (values.password !== values.confirmPassword) {
-      setError(true);
-      setConfirmPasswordHelperText(
-        "Password and confirm password are not matched"
-      );
-    } else {
-      setError(false);
-    }
   };
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     formValidation();
-    signUpUser();
+    loginUser();
     console.log("form is submited");
   };
+
   return (
     <div>
-      <h1 className={classes.title}>SIGN UP</h1>
-      {/* <Divider variant="middle" style={{ margin: "15px" }} /> */}
-
+      <h1 className={classes.title}>ADMIN LOGIN</h1>
       <form
         className={classes.root}
         noValidate
         autoComplete="off"
         onSubmit={onFormSubmit}
       >
-        {errors.email ? (
-          <div>
-            <Alert
-              variant="outlined"
-              severity="error"
-              className={classes.textField}
-            >
-              {errors.email}
-            </Alert>
-          </div>
-        ) : null}
         {/* {loading ? (
           <CircularProgress color="secondary" />
         ) : (
           <h1>Hello Data Loaded</h1>
         )} */}
-        <div>
-          <TextField
-            id="outlined-flexible"
-            label="Username"
-            variant="outlined"
-            color="secondary"
-            type="text"
-            name="username"
-            onChange={onChange}
-            error={userHelperText ? 1 : 0}
-            helperText={userHelperText}
-            size="small"
-            className={classes.textField}
-          />
-        </div>
+
         <div>
           <TextField
             id="outlined-flexible"
@@ -207,56 +148,34 @@ const SignUp = () => {
           />
         </div>
         <div>
-          <TextField
-            id="outlined-flexible"
-            label="Confirm Password"
-            variant="outlined"
-            color="secondary"
-            type="password"
-            name="confirmPassword"
-            onChange={onChange}
-            error={confirmPasswordHelperText ? 1 : 0}
-            helperText={confirmPasswordHelperText}
-            size="small"
-            className={classes.textField}
-          />
-        </div>
-        <div>
           <Button
             variant="outlined"
             color="secondary"
             type="submit"
             className={classes.textField}
           >
-            SIGN UP
+            Sign In
           </Button>
         </div>
+        {/* <div style={{ color: "white", background: "red" }}>
+        <div>{values.username}</div>
+        <div>{values.email}</div>
+        <div>{values.password}</div>
+        <div>{values.confirmPassword}</div>
+      </div> */}
       </form>
     </div>
   );
 };
 
-const REGISTER_MUTATION = gql`
-  mutation register(
-    $username: String!
-    $email: String!
-    $password: String!
-    $confirmPassword: String!
-  ) {
-    register(
-      registerInput: {
-        username: $username
-        email: $email
-        password: $password
-        confirmPassword: $confirmPassword
-      }
-    ) {
+const LOGIN_MUTATION = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
       id
       email
       token
-      username
     }
   }
 `;
 
-export default SignUp;
+export default Login;
