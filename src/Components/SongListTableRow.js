@@ -1,20 +1,8 @@
 import React, { useState } from "react";
-import {
-  makeStyles,
-  Table,
-  TableContainer,
-  TableBody,
-  TableHead,
-  TableRow,
-  TableCell,
-  Paper,
-  TablePagination,
-  CircularProgress,
-  Button,
-  Link,
-} from "@material-ui/core";
-import { useQuery, gql } from "@apollo/client";
+import { makeStyles, TableRow, TableCell, Button } from "@material-ui/core";
+import { useMutation, gql } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { MUSIC_INFO_QUERY } from "../util/graphql";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,13 +49,64 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SongListTableRow = ({ title, artist, album, id, cover }) => {
+  console.log(id);
   const classes = useStyles();
-  const history = useHistory();
+  const [deleteSong] = useMutation(DELETE_SONG__MUTATION, {
+    onError(error) {
+      console.log(error);
+    },
 
-  const deleteHandler = (d) => {
-    console.log("Delete cliekc", d);
-    let result = window.confirm("Are You Sure You Want To Delete");
-    console.log("Result", result);
+    update(proxy) {
+      const myCache = proxy.readQuery({ query: MUSIC_INFO_QUERY });
+      if (myCache) {
+        proxy.writeQuery({
+          query: MUSIC_INFO_QUERY,
+          data: {
+            getAllSongs: myCache.getAllSongs.filter((s) => s._id !== id),
+          },
+        });
+      }
+
+      // window.location.reload();
+      // const { getAllSongs } = proxy.readQuery({
+      //   query: MUSIC_INFO_QUERY,
+      // });
+
+      // console.log("UpdaterResult :", getAllSongs);
+      // console.log("data", data);
+      // getAllSongs = getAllSongs.filter((song) => {
+      //   console.log(song);
+      //   return song._id !== id;
+      // });
+      // console.log("Alter updation", getAllSongs);
+      // proxy.writeQuery({
+      //   query: MUSIC_INFO_QUERY,
+      //   data: { getAllSongs: getAllSongs },
+      // });
+
+      // console.log(data.getAllSongs);
+
+      //   if (result) {
+      //     // history.push("/");
+      //     console.log("delete mustionresult", result);
+      //   }
+    },
+    // onError(err) {
+    //   //   setErrors(err.graphQLErrors[0].extensions.exception.errors);
+    // },
+    // variables: { songId: songIdState },
+    // variables:{
+    //   username:values.username,
+    //   email:values.email
+    // }
+    // OR
+  });
+
+  const deleteHandler = (songId) => {
+    let permission = window.confirm("Are You Sure You Want To Delete");
+    if (permission) {
+      deleteSong({ variables: { songId: songId } });
+    }
   };
   return (
     <>
@@ -92,5 +131,11 @@ const SongListTableRow = ({ title, artist, album, id, cover }) => {
     </>
   );
 };
+
+const DELETE_SONG__MUTATION = gql`
+  mutation deleteSong($songId: ID!) {
+    deleteSong(songId: $songId)
+  }
+`;
 
 export default SongListTableRow;
