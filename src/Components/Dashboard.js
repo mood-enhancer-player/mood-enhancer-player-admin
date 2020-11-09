@@ -253,7 +253,7 @@ function Dashboard(props) {
       text: "Dashboard",
       icon: <HomeIcon />,
       onClick: () => {
-        setState("DashBoard");
+        setState("Dashboard");
         // history.push("/home");
       },
     },
@@ -393,7 +393,7 @@ function Dashboard(props) {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        {state === "DashBoard" ? <Home /> : null}
+        {state === "Dashboard" ? <Home /> : null}
         {state === "AddSongs" ? <AddSongs /> : null}
         {state === "UserList" ? <UserList /> : null}
         {state === "AddArtist" ? <AddArtist /> : null}
