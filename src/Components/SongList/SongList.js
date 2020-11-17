@@ -88,7 +88,7 @@ const SongList = () => {
     setPage(0);
   };
   if (musicInfo.data) {
-    console.log("Music data", musicInfo.data);
+    console.log("Music data", musicInfo.data.getAllSongs.length);
   }
 
   return (
@@ -115,18 +115,21 @@ const SongList = () => {
             {!musicInfo.data || musicInfo.loading ? (
               <Loader />
             ) : (
-              musicInfo.data.getAllSongs.map((song) => {
-                return (
-                  <SongListTableRow
-                    title={song.name}
-                    artist={song.singer}
-                    album={song.album}
-                    id={song._id}
-                    cover={song.cover}
-                    key={song._id}
-                  />
-                );
-              })
+              musicInfo.data.getAllSongs
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((song, index) => {
+                  return (
+                    <SongListTableRow
+                      title={song.name}
+                      artist={song.singer}
+                      album={song.album}
+                      id={song._id}
+                      cover={song.cover}
+                      key={song._id}
+                      index={index + page * 5 + 1}
+                    />
+                  );
+                })
             )}
           </TableBody>
         </Table>
@@ -134,7 +137,7 @@ const SongList = () => {
       <TablePagination
         component="div"
         rowsPerPageOptions={[5, 10, 15, 20]}
-        count={10}
+        count={musicInfo.data ? musicInfo.data.getAllSongs.length : 10}
         rowsPerPage={rowsPerPage}
         page={page}
         onChangePage={onChangePage}

@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SongListTableRow = ({ title, artist, album, id, cover }) => {
+const SongListTableRow = ({ title, artist, album, id, cover, index }) => {
   console.log(id);
   const classes = useStyles();
   const [deleteSong] = useMutation(DELETE_SONG__MUTATION, {
@@ -110,7 +110,7 @@ const SongListTableRow = ({ title, artist, album, id, cover }) => {
   return (
     <>
       <TableRow hover>
-        <TableCell className={classes.textAlign}>1</TableCell>
+        <TableCell className={classes.textAlign}>{index}</TableCell>
         <TableCell className={classes.textAlign}>
           <img src={cover} alt="img" className={classes.coverImg} />
         </TableCell>
