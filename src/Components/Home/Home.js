@@ -1,14 +1,8 @@
-import React, { useState } from "react";
-import {
-  Grid,
-  Typography,
-  makeStyles,
-  Paper,
-  CircularProgress,
-} from "@material-ui/core";
+import React from "react";
+import { Grid, makeStyles, CircularProgress } from "@material-ui/core";
 import Analysis from "./Analysis";
 import { useQuery, gql } from "@apollo/client";
-import DashboardCard from "./DashboardCard";
+import DashboardCard from "../Dashboard/DashBoardCard/DashboardCard";
 
 // import hasi from "../music/hasi.mp3";
 // import kabir from "../music/kabir.mp3";
@@ -42,13 +36,12 @@ const useStyles = makeStyles({
     // padding: "25px",
     textAlign: "center",
     // paddingTop: "25px",
-    fontSize: "20px",
     padding: "15px",
     fontSize: "20px",
     letterSpacing: "3px",
-    background: "#0F131A" /* fallback for old browsers */,
-    background:
-      "-webkit-linear-gradient(to right,#0F131A,#1A1D24)" /* Chrome 10-25, Safari 5.1-6 */,
+    // background: "#0F131A" /* fallback for old browsers */,
+    // background:
+    //   "-webkit-linear-gradient(to right,#0F131A,#1A1D24)" /* Chrome 10-25, Safari 5.1-6 */,
     background:
       "linear-gradient(to right,#0F131A,#1A1D24)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
     // paddingBottom:"auto"

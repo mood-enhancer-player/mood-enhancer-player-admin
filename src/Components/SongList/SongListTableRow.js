@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, TableRow, TableCell, Button } from "@material-ui/core";
 import { useMutation, gql } from "@apollo/client";
-import { useHistory } from "react-router-dom";
-import { MUSIC_INFO_QUERY } from "../util/graphql";
+import { MUSIC_INFO_QUERY } from "../../util/graphql";
 
 const useStyles = makeStyles((theme) => ({
   root: {

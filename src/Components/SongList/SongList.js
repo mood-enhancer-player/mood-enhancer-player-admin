@@ -14,7 +14,7 @@ import {
   Link,
 } from "@material-ui/core";
 import { useQuery, gql } from "@apollo/client";
-import Loader from "./Loader";
+import Loader from "../Common/Loader";
 import SongListTableRow from "./SongListTableRow";
 
 const useStyles = makeStyles((theme) => ({

@@ -1,12 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Dashboard from "./Components/Dashboard";
 import "./App.css";
-import SignUp from "./Components/SignUp";
-import Login from "./Components/Login";
 
 import { AuthProvider } from "./context/auth";
 import AuthRoute from "./util/AuthRoute";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import Login from "./Components/AdminAuth/Login";
+import SignUp from "./Components/AdminAuth/SignUp";
 
 const App = () => {
   return (

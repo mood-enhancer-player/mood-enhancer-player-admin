@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { makeStyles, TextField, Button } from "@material-ui/core";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../context/auth";
+import { AuthContext } from "../../context/auth";
 
 const useStyles = makeStyles((theme) => ({
   root: {
