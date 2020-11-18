@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { from, gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
-import { MUSIC_INFO_QUERY } from "../../util/graphql";
+import { MUSIC_INFO_QUERY, USERLIST_QUERY } from "../../util/graphql";
 
 const useStyles = makeStyles((theme) => ({
   labelName: {
@@ -74,6 +74,11 @@ const AddSongs = () => {
   };
   const history = useHistory();
   const [UploadSongData, { loading }] = useMutation(UPLOAD_SONG_DATA_MUTATION, {
+    refetchQueries: [
+      {
+        query: MUSIC_INFO_QUERY,
+      },
+    ],
     // update(proxy, payload) {
     //   console.log("payload", payload);
     //   const myCache = proxy.readQuery({ query: MUSIC_INFO_QUERY });
