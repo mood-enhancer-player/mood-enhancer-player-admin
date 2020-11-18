@@ -13,3 +13,13 @@ export const MUSIC_INFO_QUERY = gql`
     }
   }
 `;
+
+export const USERLIST_QUERY = gql`
+  query {
+    getAllUsers {
+      email
+      username
+      createdAt
+    }
+  }
+`;

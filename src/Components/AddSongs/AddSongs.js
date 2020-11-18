@@ -6,8 +6,9 @@ import {
   Paper,
   TextField,
 } from "@material-ui/core";
-import { gql, useMutation } from "@apollo/client";
+import { from, gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { MUSIC_INFO_QUERY } from "../../util/graphql";
 
 const useStyles = makeStyles((theme) => ({
   labelName: {
@@ -73,20 +74,23 @@ const AddSongs = () => {
   };
   const history = useHistory();
   const [UploadSongData, { loading }] = useMutation(UPLOAD_SONG_DATA_MUTATION, {
-    update(_, result) {
-      if (result) {
-        history.push("/");
-        console.log(result);
-      }
-    },
-    onError(err) {
-      // setErrors(err.graphQLErrors[0].extensions.exception.errors);
-    },
-    // variables:{
-    //   username:values.username,
-    //   email:values.email
-    // }
-    // OR
+    // update(proxy, payload) {
+    //   console.log("payload", payload);
+    //   const myCache = proxy.readQuery({ query: MUSIC_INFO_QUERY });
+    //   console.log(MUSIC_INFO_QUERY);
+    //   if (myCache) {
+    //     console.log(myCache);
+    //     proxy.writeQuery({
+    //       query: MUSIC_INFO_QUERY,
+    //       data: {
+    //         getAllSongs: myCache.getAllSongs,
+    //       },
+    //     });
+    //   }
+    // },
+    // onError(err) {
+    //   // setErrors(err.graphQLErrors[0].extensions.exception.errors);
+    // },
   });
 
   //   const onFormSubmit = (e) => {

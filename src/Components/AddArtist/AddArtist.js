@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { gql, useMutation } from "@apollo/client";
 import { useHistory } from "react-router-dom";
+import { USERLIST_QUERY } from "../../util/graphql";
 
 const useStyles = makeStyles((theme) => ({
   labelName: {
@@ -65,15 +66,12 @@ const AddArtist = () => {
   };
   const history = useHistory();
   const [AddArtist, { loading }] = useMutation(ADD_ARTIST_MUTATION, {
-    update(_, result) {
-      if (result) {
-        history.push("/");
-        console.log(result);
-      }
-    },
-    onError(err) {
-      // setErrors(err.graphQLErrors[0].extensions.exception.errors);
-    },
+    // update(_, result) {
+    //   if (result) {
+    //     history.push("/");
+    //     console.log(result);
+    //   }
+    // },
     // variables:{
     //   username:values.username,
     //   email:values.email
