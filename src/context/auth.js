@@ -18,7 +18,7 @@ if (localStorage.getItem("auth_token")) {
 
 const AuthContext = createContext({
   user: null,
-  login: (userData) => {},
+  adminLogin: (userData) => {},
   logout: () => {},
 });
 
@@ -42,7 +42,8 @@ const authReducer = (state, action) => {
 const AuthProvider = (props) => {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-  const login = (userData) => {
+  const adminLogin = (userData) => {
+    console.log("userData", userData);
     localStorage.setItem("auth_token", userData.token);
     dispatch({
       type: "LOGIN",
@@ -60,7 +61,7 @@ const AuthProvider = (props) => {
 
   return (
     <AuthContext.Provider
-      value={{ user: state.user, login, logout }}
+      value={{ user: state.user, adminLogin, logout }}
       {...props}
     />
   );

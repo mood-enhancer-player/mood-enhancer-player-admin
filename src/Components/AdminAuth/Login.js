@@ -49,13 +49,12 @@ const Login = () => {
   };
 
   const history = useHistory();
-  const [loginUser, { loading }] = useMutation(LOGIN_MUTATION, {
+  const [loginUser, { loading }] = useMutation(ADMIN_LOGIN_MUTATION, {
     update(_, result) {
       if (result) {
-        context.login(result.data.login);
+        context.adminLogin(result.data.adminLogin);
         history.push("/");
       }
-      console.log(loading);
     },
     onError(err) {
       //   setErrors(err.graphQLErrors[0].extensions.exception.errors);
@@ -168,9 +167,9 @@ const Login = () => {
   );
 };
 
-const LOGIN_MUTATION = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+const ADMIN_LOGIN_MUTATION = gql`
+  mutation Login($email: String!, $password: String!) {
+    adminLogin(email: $email, password: $password) {
       id
       email
       token
