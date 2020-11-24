@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     // background: "green",
   },
 }));
-const Dashboard = (props) => {
+const Dashboard = ({ themeHandler, themeToggler }) => {
   const classes = useStyles();
 
   const { user, logout } = useContext(AuthContext);
@@ -199,7 +199,6 @@ const Dashboard = (props) => {
   // const container =
   //   window !== undefined ? () => window().document.body : undefined;
   const menuId = "primary-search-account-menu";
-
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -208,6 +207,8 @@ const Dashboard = (props) => {
         state={state}
         handleDrawerToggle={handleDrawerToggle}
         handleProfileMenuOpen={handleProfileMenuOpen}
+        themeToggler={themeToggler}
+        themeHandler={themeHandler}
       />
       {/* <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>

@@ -1,8 +1,15 @@
 import React from "react";
 import { AppBar, IconButton, Toolbar, fade } from "@material-ui/core";
 import {
+  HomeOutlined as HomeIcon,
+  SearchOutlined as SearchIcon,
+  InfoOutlined as InfoIcon,
   MenuOutlined as MenuIcon,
+  AlarmOutlined as AlarmIcon,
   AccountCircleOutlined as AccountCircle,
+  FavoriteBorderOutlined as FavoriteBorderIcon,
+  Brightness7 as Brightness7Icon,
+  Brightness4 as Brightness4Icon,
 } from "@material-ui/icons";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -71,6 +78,10 @@ const useStyles = makeStyles((theme) => ({
       display: "flex",
     },
   },
+  brightness: {
+    marginRight: "2rem",
+    cursor: "pointer",
+  },
 }));
 
 const AppNavBar = ({
@@ -78,6 +89,8 @@ const AppNavBar = ({
   menuId,
   handleDrawerToggle,
   handleProfileMenuOpen,
+  themeToggler,
+  themeHandler,
 }) => {
   const classes = useStyles();
 
@@ -98,6 +111,16 @@ const AppNavBar = ({
         </div>
 
         <div className={classes.grow} />
+        {themeToggler ? (
+          <div className={classes.brightness} onClick={themeHandler}>
+            <h1>{themeToggler}</h1>
+            <Brightness7Icon />
+          </div>
+        ) : (
+          <div className={classes.brightness} onClick={themeHandler}>
+            <Brightness4Icon />
+          </div>
+        )}
         <div className={classes.sectionDesktop}>
           <IconButton
             edge="end"

@@ -19,10 +19,20 @@ const darkTheme = createMuiTheme({
 
 const lightTheme = createMuiTheme({
   palette: {
-    light: "#212121",
-    main: "#212121",
-    dark: "#212121",
-    contrastText: "#fff",
+    primary: {
+      light: "#eeeeee",
+      main: "#d8d8d8",
+      dark: "#cccccc",
+      contrastText: "#000000", // icon color
+    },
+    grey: {
+      // 50: "#e2e2e2",
+      50: "#e6e6e6", // card color
+    },
+    text: {
+      primary: "#000000",
+    },
+    secondary: lightBlue,
   },
 });
 
