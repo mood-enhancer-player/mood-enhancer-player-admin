@@ -14,9 +14,10 @@ import {
 import { useQuery, gql } from "@apollo/client";
 import Loader from "../Common/Loader";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    backgroundColor: theme.palette.primary.main,
   },
   loader: {
     backgroundColor: "white",
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
   columTitleRow: {
     background: "black",
   },
-});
+}));
 
 const users = [
   {

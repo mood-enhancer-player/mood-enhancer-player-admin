@@ -20,6 +20,7 @@ import SongListTableRow from "./SongListTableRow";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
+    backgroundColor: theme.palette.primary.main,
   },
   loader: {
     backgroundColor: "white",
@@ -52,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     //   color:"green"
   },
   deleteBtn: {
-    backgroundColor: "red",
+    backgroundColor: theme.palette.error.dark,
     marginLeft: "15px",
   },
   coverImg: {

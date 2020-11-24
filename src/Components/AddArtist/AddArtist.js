@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     height: "270px",
     marginRight: "auto",
     marginLeft: "auto",
+    background: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       width: "300px",
       height: "640px",
@@ -108,7 +109,7 @@ const AddArtist = () => {
         <CircularProgress color="secondary" />
       ) : (
         <Paper className={classes.paper}>
-          <h1 style={{ textAlign: "center" }}>Add New Song</h1>
+          <h1 style={{ textAlign: "center" }}>Add New Artist</h1>
           <form>
             <div className={classes.divInput}>
               <label className={classes.labelName}>Artist Name :</label>
@@ -141,8 +142,8 @@ const AddArtist = () => {
             <div>
               <center>
                 <Button
-                  variant="contained"
-                  color="primary"
+                  variant="outlined"
+                  color="secondary"
                   className={classes.btn}
                   onClick={onArtistDataSubmit}
                 >

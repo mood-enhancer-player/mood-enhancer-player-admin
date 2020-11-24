@@ -35,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
     height: "530px",
     marginRight: "auto",
     marginLeft: "auto",
+    background: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       // display: "column"
       width: "300px",
@@ -221,14 +222,16 @@ const AddSongs = () => {
               />
             </div>
             <div>
-              <Button
-                variant="outlined"
-                color="secondary"
-                className={classes.btn}
-                onClick={onSongDataSubmit}
-              >
-                ADD SONG
-              </Button>
+              <center>
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className={classes.btn}
+                  onClick={onSongDataSubmit}
+                >
+                  ADD SONG
+                </Button>
+              </center>
             </div>
           </form>
         </Paper>
