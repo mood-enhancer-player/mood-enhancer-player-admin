@@ -3,6 +3,7 @@ import { Grid, makeStyles, CircularProgress } from "@material-ui/core";
 import Analysis from "./Analysis";
 import { useQuery, gql } from "@apollo/client";
 import DashboardCard from "../Dashboard/DashBoardCard/DashboardCard";
+import CardSkeleton from "../Common/Skeleton/CardSkeleton";
 
 // import hasi from "../music/hasi.mp3";
 // import kabir from "../music/kabir.mp3";
@@ -113,7 +114,13 @@ function Home() {
       musicInfo.loading ||
       !userInfo.data ||
       userInfo.loading ? (
-        <CircularProgress />
+        <div className={classes.root}>
+          <Grid container spacing={2}>
+            <CardSkeleton />
+            <CardSkeleton />
+            <CardSkeleton />
+          </Grid>
+        </div>
       ) : (
         <>
           <div>

@@ -16,6 +16,7 @@ import {
 import { useQuery, gql } from "@apollo/client";
 import Loader from "../Common/Loader";
 import SongListTableRow from "./SongListTableRow";
+import TableRowSkeleton from "../Common/Skeleton/TableRowSkeleton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -92,6 +93,8 @@ const SongList = () => {
     console.log("Music data", musicInfo.data.getAllSongs.length);
   }
 
+  const songListCardSkeleton = new Array(10).fill(0);
+
   return (
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
@@ -113,25 +116,23 @@ const SongList = () => {
               <h1>{`You Broken It ! ${musicInfo.error.message}`}</h1>
             )}
 
-            {!musicInfo.data || musicInfo.loading ? (
-              <Loader />
-            ) : (
-              musicInfo.data.getAllSongs
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((song, index) => {
-                  return (
-                    <SongListTableRow
-                      title={song.name}
-                      artist={song.singer}
-                      album={song.album}
-                      id={song._id}
-                      cover={song.cover}
-                      key={song._id}
-                      index={index + page * 5 + 1}
-                    />
-                  );
-                })
-            )}
+            {!musicInfo.data || musicInfo.loading
+              ? songListCardSkeleton.map(() => <TableRowSkeleton />)
+              : musicInfo.data.getAllSongs
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((song, index) => {
+                    return (
+                      <SongListTableRow
+                        title={song.name}
+                        artist={song.singer}
+                        album={song.album}
+                        id={song._id}
+                        cover={song.cover}
+                        key={song._id}
+                        index={index + page * 5 + 1}
+                      />
+                    );
+                  })}
           </TableBody>
         </Table>
       </TableContainer>
