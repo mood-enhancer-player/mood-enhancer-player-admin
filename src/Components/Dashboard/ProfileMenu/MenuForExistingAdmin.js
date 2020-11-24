@@ -5,9 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../context/auth";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   menuItemLink: {
-    color: "white",
+    color: theme.palette.primary.contrastText,
     textDecoration: "none",
   },
 }));

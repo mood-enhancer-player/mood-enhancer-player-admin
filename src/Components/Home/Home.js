@@ -10,7 +10,7 @@ import DashboardCard from "../Dashboard/DashBoardCard/DashboardCard";
 // import sanamre from "../music/sanamre.mp3";
 // import hasiImag from "../images/1.png";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
@@ -55,7 +55,7 @@ const useStyles = makeStyles({
     fontStyle: "italic",
     padding: "10px",
   },
-});
+}));
 
 function Home() {
   const classes = useStyles();

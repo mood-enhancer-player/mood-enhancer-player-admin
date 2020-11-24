@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: drawerWidth,
     },
     zIndex: "1",
-    background: "black",
+    background: theme.palette.primary.light,
   },
   menuButton: {
     marginRight: theme.spacing(2),

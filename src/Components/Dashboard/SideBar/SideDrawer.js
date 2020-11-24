@@ -17,7 +17,7 @@ import {
 } from "@material-ui/icons";
 
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Profile from "../../Profile/Profile";
+import Profile from "../../Common/Profile";
 
 const useStyles = makeStyles((theme) => ({
   privacy: {
@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: "92px",
     },
+  },
+  iconColor: {
+    color: theme.palette.primary.contrastText,
   },
 }));
 
@@ -66,7 +69,11 @@ const SideDrawer = ({ selectedMenuItem }) => {
           const { text, icon, onClick } = item;
           return (
             <ListItem button key={text} onClick={() => selectedMenuItem(text)}>
-              {icon && <ListItemIcon>{icon}</ListItemIcon>}
+              {icon && (
+                <ListItemIcon className={classes.iconColor}>
+                  {icon}
+                </ListItemIcon>
+              )}
               <ListItemText primary={text} />
             </ListItem>
           );
