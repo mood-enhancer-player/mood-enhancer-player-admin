@@ -7,6 +7,7 @@ import {
   CircularProgress,
 } from "@material-ui/core";
 import { gql, useQuery, useMutation } from "@apollo/client";
+import ProfileSkeleton from "./Skeleton/ProfileSkeleton";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -87,7 +88,7 @@ const Profile = () => {
     <>
       {error && <h1>{`Profile Picture Not Uploaded ! ${error.message}`}</h1>}
       {!data || loading ? (
-        <CircularProgress />
+        <ProfileSkeleton />
       ) : (
         <>
           <div className={classes.root}>
