@@ -5,6 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { darkTheme } from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
+import { HOST_URL } from "./config";
 
 import {
   ApolloProvider,
@@ -17,7 +18,7 @@ import { createUploadLink } from "apollo-upload-client";
 // const httpLink = new HttpLink({ uri: "http://localhost:9090/graphql" });
 
 const httpLink = createUploadLink({
-  uri: "http://localhost:9090/graphql",
+  uri: HOST_URL,
 });
 
 const authLink = new ApolloLink((operation, forward) => {
