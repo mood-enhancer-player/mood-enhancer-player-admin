@@ -77,7 +77,7 @@ const UserList = () => {
                 {data.getAllUsers
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                   .map((user, index) => (
-                    <TableRow key={user.id} hover>
+                    <TableRow key={index} hover>
                       <TableCell className={classes.textAlign}>
                         {index + page * 5 + 1}
                       </TableCell>
