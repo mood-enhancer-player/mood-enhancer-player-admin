@@ -5,13 +5,13 @@ const darkTheme = createMuiTheme({
   palette: {
     type: "dark",
     primary: {
-      light: "#1A1D24", // Drawer Color+ Appbar color
-      main: "#0F131A", // MusicCard background
-      dark: "#222831", // Card hover,
+      light: "#1A1D24",
+      main: "#0F131A",
+      dark: "#222831",
       contrastText: "#fff",
     },
     grey: {
-      50: "#2a2b2c", // card color
+      50: "#2a2b2c",
     },
     secondary: lightBlue,
   },
@@ -23,11 +23,10 @@ const lightTheme = createMuiTheme({
       light: "#eeeeee",
       main: "#d8d8d8",
       dark: "#cccccc",
-      contrastText: "#000000", // icon color
+      contrastText: "#000000",
     },
     grey: {
-      // 50: "#e2e2e2",
-      50: "#e6e6e6", // card color
+      50: "#e6e6e6",
     },
     text: {
       primary: "#000000",

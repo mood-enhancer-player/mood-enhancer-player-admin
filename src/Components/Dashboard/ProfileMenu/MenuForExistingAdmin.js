@@ -33,11 +33,7 @@ const MenuForExistingAdmin = ({
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>
-        {/* <Link to="/signup" className={classes.menuItemLink}>
-          My Account
-        </Link> */}
-      </MenuItem>
+      <MenuItem onClick={handleMenuClose}></MenuItem>
       <MenuItem onClick={handleMenuClose}>
         <Link to="/login" className={classes.menuItemLink} onClick={logout}>
           Logout

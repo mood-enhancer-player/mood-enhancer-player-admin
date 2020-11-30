@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles, TableRow, TableCell, Button } from "@material-ui/core";
 import { useMutation, gql } from "@apollo/client";
 import { MUSIC_INFO_QUERY } from "../../util/graphql";
@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
   editBtn: {
     backgroundColor: "green",
     marginLeft: "15px",
-    //   color:"green"
   },
   deleteBtn: {
     backgroundColor: "red",
@@ -65,40 +64,7 @@ const SongListTableRow = ({ title, artist, album, id, cover, index }) => {
           },
         });
       }
-
-      // window.location.reload();
-      // const { getAllSongs } = proxy.readQuery({
-      //   query: MUSIC_INFO_QUERY,
-      // });
-
-      // console.log("UpdaterResult :", getAllSongs);
-      // console.log("data", data);
-      // getAllSongs = getAllSongs.filter((song) => {
-      //   console.log(song);
-      //   return song._id !== id;
-      // });
-      // console.log("Alter updation", getAllSongs);
-      // proxy.writeQuery({
-      //   query: MUSIC_INFO_QUERY,
-      //   data: { getAllSongs: getAllSongs },
-      // });
-
-      // console.log(data.getAllSongs);
-
-      //   if (result) {
-      //     // history.push("/");
-      //     console.log("delete mustionresult", result);
-      //   }
     },
-    // onError(err) {
-    //   //   setErrors(err.graphQLErrors[0].extensions.exception.errors);
-    // },
-    // variables: { songId: songIdState },
-    // variables:{
-    //   username:values.username,
-    //   email:values.email
-    // }
-    // OR
   });
 
   const deleteHandler = (songId) => {
@@ -124,7 +90,6 @@ const SongListTableRow = ({ title, artist, album, id, cover, index }) => {
           >
             Delete
           </Button>
-          {/* <Button className={classes.deleteBtn}>Delete</Button> */}
         </TableCell>
       </TableRow>
     </>

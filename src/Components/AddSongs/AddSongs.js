@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme) => ({
     width: "250px",
     margin: "auto",
     [theme.breakpoints.down("md")]: {
-      // display: "inline-block",
       width: "100px",
     },
   },
@@ -37,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "auto",
     background: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
-      // display: "column"
       width: "300px",
       height: "640px",
     },
@@ -46,7 +44,6 @@ const useStyles = makeStyles((theme) => ({
     width: "400px",
     height: "50px",
     [theme.breakpoints.down("md")]: {
-      // display: "column"
       width: "250px",
     },
   },
@@ -98,13 +95,6 @@ const AddSongs = () => {
     //   // setErrors(err.graphQLErrors[0].extensions.exception.errors);
     // },
   });
-
-  //   const onFormSubmit = (e) => {
-  //     e.preventDefault();
-  //     //   formValidation();
-  //     uploadSong();
-  //     console.log("form is submited");
-  //   };
 
   const songFileHandler = (e) => {
     let file = e.target.files[0];
@@ -189,7 +179,6 @@ const AddSongs = () => {
                 variant="outlined"
                 color="secondary"
                 type="text"
-                // label="Alnbum"
                 name="singer"
                 onChange={onChange}
                 size="small"

@@ -9,7 +9,6 @@ import {
   TableCell,
   Paper,
   TablePagination,
-  CircularProgress,
 } from "@material-ui/core";
 import { useQuery, gql } from "@apollo/client";
 import Loader from "../Common/Loader";
@@ -36,91 +35,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const users = [
-  {
-    id: 1,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 2,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 3,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 4,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 5,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 6,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 7,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 8,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 9,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 10,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-  {
-    id: 11,
-    username: "Harsh",
-    email: "Hatr@gata.aahla",
-    password: "2235555",
-    createdAt: "01-11-2020",
-  },
-];
-
 const UserList = () => {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [tableIndex, setTableIndex] = useState(0);
 
   const columTitleRow = ["Id", "Username", "E-mail", "CreateAt"];
 
@@ -138,9 +56,6 @@ const UserList = () => {
   return (
     <>
       {loading || !data ? (
-        // <center>
-        // <CircularProgress className={classes.loader} />
-        // </center>
         <Loader />
       ) : (
         <Paper className={classes.root}>

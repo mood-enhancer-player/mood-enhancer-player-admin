@@ -25,11 +25,6 @@ const MenuForNewUser = ({ menuId, anchorEl, isMenuOpen, handleMenuClose }) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      {/* <MenuItem onClick={handleMenuClose}>
-        <Link to="/signup" className={classes.menuItemLink}>
-          Sign Up
-        </Link>
-      </MenuItem> */}
       <MenuItem onClick={handleMenuClose}>
         <Link to="/login" className={classes.menuItemLink}>
           Log In

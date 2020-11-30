@@ -1,13 +1,8 @@
 import React from "react";
 import { AppBar, IconButton, Toolbar, fade } from "@material-ui/core";
 import {
-  HomeOutlined as HomeIcon,
-  SearchOutlined as SearchIcon,
-  InfoOutlined as InfoIcon,
   MenuOutlined as MenuIcon,
-  AlarmOutlined as AlarmIcon,
   AccountCircleOutlined as AccountCircle,
-  FavoriteBorderOutlined as FavoriteBorderIcon,
   Brightness7 as Brightness7Icon,
   Brightness4 as Brightness4Icon,
 } from "@material-ui/icons";

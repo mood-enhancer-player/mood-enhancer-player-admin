@@ -66,26 +66,7 @@ const AddArtist = () => {
     });
   };
   const history = useHistory();
-  const [AddArtist, { loading }] = useMutation(ADD_ARTIST_MUTATION, {
-    // update(_, result) {
-    //   if (result) {
-    //     history.push("/");
-    //     console.log(result);
-    //   }
-    // },
-    // variables:{
-    //   username:values.username,
-    //   email:values.email
-    // }
-    // OR
-  });
-
-  //   const onFormSubmit = (e) => {
-  //     e.preventDefault();
-  //     //   formValidation();
-  //     uploadSong();
-  //     console.log("form is submited");
-  //   };
+  const [AddArtist, { loading }] = useMutation(ADD_ARTIST_MUTATION, {});
 
   const singerProfileFileHandler = (e) => {
     let file = e.target.files[0];

@@ -72,11 +72,6 @@ const SignUp = () => {
     onError(err) {
       setErrors(err.graphQLErrors[0].extensions.exception.errors);
     },
-    // variables:{
-    //   username:values.username,
-    //   email:values.email
-    // }
-    // OR
     variables: values,
   });
 
@@ -156,11 +151,6 @@ const SignUp = () => {
             </Alert>
           </div>
         ) : null}
-        {/* {loading ? (
-          <CircularProgress color="secondary" />
-        ) : (
-          <h1>Hello Data Loaded</h1>
-        )} */}
         <div>
           <TextField
             id="outlined-flexible"

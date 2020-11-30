@@ -15,8 +15,6 @@ import {
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 
-// const httpLink = new HttpLink({ uri: "http://localhost:9090/graphql" });
-
 const httpLink = createUploadLink({
   uri: HOST_URL,
 });
@@ -42,14 +40,11 @@ const client = new ApolloClient({
 });
 
 ReactDOM.render(
-  // <React.StrictMode>
-  <ApolloProvider client={client}>
-    {/* <ThemeProvider theme={darkTheme}> */}
-    <App />
-    {/* </ThemeProvider> */}
-  </ApolloProvider>,
-
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 

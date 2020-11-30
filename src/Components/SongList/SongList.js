@@ -9,12 +9,8 @@ import {
   TableCell,
   Paper,
   TablePagination,
-  CircularProgress,
-  Button,
-  Link,
 } from "@material-ui/core";
 import { useQuery, gql } from "@apollo/client";
-import Loader from "../Common/Loader";
 import SongListTableRow from "./SongListTableRow";
 import TableRowSkeleton from "../Common/Skeleton/TableRowSkeleton";
 
@@ -51,7 +47,6 @@ const useStyles = makeStyles((theme) => ({
   editBtn: {
     backgroundColor: "green",
     marginLeft: "15px",
-    //   color:"green"
   },
   deleteBtn: {
     backgroundColor: theme.palette.error.dark,

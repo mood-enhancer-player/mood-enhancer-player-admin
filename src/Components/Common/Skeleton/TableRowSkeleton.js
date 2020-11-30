@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { makeStyles, TableRow, TableCell, Button } from "@material-ui/core";
+import React from "react";
+import { makeStyles, TableRow, TableCell } from "@material-ui/core";
 import Skeleton from "@material-ui/lab/Skeleton";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,6 @@ const TableRowSkeleton = () => {
           <Skeleton animation="wave" />
         </TableCell>
         <TableCell>
-          {/* <img src={cover} alt="img" className={classes.coverImg} /> */}
           <Skeleton
             animation="wave"
             variant="squre"

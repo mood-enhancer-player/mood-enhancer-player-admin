@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     height: "190px",
-    // marginTop: "15px",
     alignItems: "center",
     alignSelf: "center",
     justifyContent: "center",

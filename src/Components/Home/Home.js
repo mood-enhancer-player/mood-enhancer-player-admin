@@ -1,15 +1,9 @@
 import React from "react";
-import { Grid, makeStyles, CircularProgress } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import Analysis from "./Analysis";
 import { useQuery, gql } from "@apollo/client";
 import DashboardCard from "../Dashboard/DashBoardCard/DashboardCard";
 import CardSkeleton from "../Common/Skeleton/CardSkeleton";
-
-// import hasi from "../music/hasi.mp3";
-// import kabir from "../music/kabir.mp3";
-// import nayanne from "../music/nayanne.mp3";
-// import sanamre from "../music/sanamre.mp3";
-// import hasiImag from "../images/1.png";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,18 +28,12 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px",
     marginLeft: "auto",
     marginRight: "auto",
-    // padding: "25px",
     textAlign: "center",
-    // paddingTop: "25px",
     padding: "15px",
     fontSize: "20px",
     letterSpacing: "3px",
-    // background: "#0F131A" /* fallback for old browsers */,
-    // background:
-    //   "-webkit-linear-gradient(to right,#0F131A,#1A1D24)" /* Chrome 10-25, Safari 5.1-6 */,
     background:
       "linear-gradient(to right,#0F131A,#1A1D24)" /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */,
-    // paddingBottom:"auto"
   },
   cardText: {
     padding: "0.1rem",

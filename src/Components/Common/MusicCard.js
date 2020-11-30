@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "left",
     marginTop: "-12px",
     marginLeft: "-15px",
-    // fontSize: "20px"
   },
   box: {
     margin: "12px 12px",
@@ -40,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     width: "155px",
     height: "155px",
     margin: "17px auto 17px",
-    // padding:"17px",
     borderRadius: "10px",
     [theme.breakpoints.down("md")]: {
       width: "100%",
@@ -86,9 +84,6 @@ const MusicCard = ({ musicData }) => {
           <Typography className={classes.cardTitle}>
             {musicData.name}
           </Typography>
-          {/* <IconButton color="secondary">
-            <PlayCircleFilledWhiteIcon />
-          </IconButton> */}
         </CardContent>
       </Card>
     </Grid>
