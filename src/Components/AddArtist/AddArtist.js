@@ -31,13 +31,13 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: "15px",
     width: "500px",
-    height: "270px",
+    // height: "270px",
     marginRight: "auto",
     marginLeft: "auto",
     background: theme.palette.primary.dark,
     [theme.breakpoints.down("md")]: {
       width: "300px",
-      height: "640px",
+      // height: "640px",
     },
   },
   textField: {
