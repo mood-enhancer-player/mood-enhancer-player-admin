@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   columTitleRow: {
-    background: "black",
+    background: theme.palette.primary.dark,
   },
 }));
 

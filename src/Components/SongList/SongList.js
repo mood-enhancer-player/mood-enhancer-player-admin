@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "5px",
   },
   columTitleRow: {
-    background: "black",
+    background: theme.palette.primary.dark,
   },
   editBtn: {
     backgroundColor: "green",
