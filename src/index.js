@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { darkTheme } from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
-import { HOST_URL } from "./config";
+// import { HOST_URL } from "./config";
 
 import {
   ApolloProvider,
@@ -16,8 +16,8 @@ import {
 import { createUploadLink } from "apollo-upload-client";
 
 const httpLink = createUploadLink({
-  uri: HOST_URL,
-  // uri: "https://testmood.herokuapp.com/graphql",
+  // uri: HOST_URL,
+  uri: "https://testmood.herokuapp.com/graphql",
 });
 
 const authLink = new ApolloLink((operation, forward) => {
