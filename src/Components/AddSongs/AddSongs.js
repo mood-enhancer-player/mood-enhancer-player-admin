@@ -97,6 +97,7 @@ const AddSongs = () => {
   });
 
   const songFileHandler = (e) => {
+    e.preventDefault();
     let file = e.target.files[0];
     setSongFile({ file });
     console.log(file);
@@ -104,6 +105,7 @@ const AddSongs = () => {
   };
 
   const coverFileHandler = (e) => {
+    e.preventDefault();
     let file = e.target.files[0];
     setcoverFile({ file });
     console.log(file);
@@ -111,6 +113,7 @@ const AddSongs = () => {
   };
 
   const onSongDataSubmit = (e) => {
+    e.preventDefault();
     UploadSongData({
       variables: {
         songFile: songFile.file,
