@@ -1,68 +1,140 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/shubhamkhunt04/mood-enhancer-player">
+    <img src="images/moodEnhancer.png" alt="Logo" width="80" height="80">
+  </a>
 
-## Available Scripts
+  <h3 align="center">Mood Enhancer Player</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    A web app that helps you to enhance your mood.
+    <br />
+    <br />
 
-### `yarn start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Mood Enhancer Player
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+It is a Full Stack Music player Web App that helps to enhance your mood by playing songs without any ads.
+  
+## Features
 
-### `yarn test`
+- Caching the data using Apollo-client.
+- Like, play, pause, next, previous song.
+- Recommend artist and album by user actions.
+- Responsive and Dark Mode.
+- User can upload his/her profile(AWS S3).
+- User can Play only specific artist songs.
+- Role-based Backend(user/admin)
+- Search song by artist name and song name.
+- Register and login using JWT auth.
+- User Management(Admin)
+- Upload Songs on AWS S3(Admin)
+- Chart Based Analysis(Admin)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Live Demo
 
-### `yarn build`
+[Click Here](https://moodenhancer.netlify.app) to play around.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Guest Credentials
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```
+Email: testuser@gmail.com
+Password: test@123
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Tech Stack
 
-### `yarn eject`
+## Frontend
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [React](https://reactjs.org/)
+- [Material-Ui](https://material-ui.com/)
+- [Apollo-Client](https://www.apollographql.com/docs/react)
+- [Charjs](https://www.chartjs.org)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [GraphQL](https://graphql.org)
+- [MongoDB and Mongoose](https://mongoosejs.com/)
+- [Apollo-Server](https://www.apollographql.com/docs/apollo-server/)
+- [Nodejs](https://nodejs.org/en)
+- [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Cloud Platform for storage
 
-## Learn More
+- [AWS S3 bucket](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html)<br/><br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Project WorkFlow
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="./images/0.png" alt="mood-enhancer"/><br/><br/>
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+# Prerequisites
 
-### Analyzing the Bundle Size
+This is an example of how to list things you need to use the software and how to install them.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-### Making a Progressive Web App
+# Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+1. Clone the repo
+   ```sh
+   git clone https://github.com/mood-enhancer-player/mood-enhancer-player-client.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Enter your Credential in `config.js`
 
-### Advanced Configuration
+4. To start development server run 
+   ```sh
+   npm start
+   ```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+# Project Screenshot
 
-### Deployment
+<img src="./images/1.png" alt="mood-enhancer"/><br/><br/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+<img src="./images/2.png" alt="mood-enhancer"/><br/><br/>
 
-### `yarn build` fails to minify
+<img src="./images/3.png" alt="mood-enhancer"/><br/><br/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<img src="./images/4.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/5.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/6.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/7.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/8.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/9.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/10.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/11.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/12.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/13.png" alt="mood-enhancer"/><br/><br/>
+
+# Admin Panel
+
+<img src="./images/14.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/15.png" alt="mood-enhancer"/><br/><br/>
+
+<img src="./images/16.png" alt="mood-enhancer"/><br/><br/>
+
+
+<!-- LICENSE -->
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
